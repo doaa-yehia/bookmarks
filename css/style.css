@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("../webfonts/Pacifico-Regular.woff") format("woff")
+     url("../webfonts/Pacifico-Regular.woff2") format("woff2") 
+     url("../webfonts/Pacifico-Regular.ttf") format("type true");
+}
+@font-face {
+    font-family: "PTSans-Caption";
+    src: url("../webfonts/PTSans-Caption.woff") format("woff")
+     url("../webfonts/PTSans-Caption.woff2") format("woff2") 
+     url("../webfonts/PTSans-Caption.ttf") format("type true");
+}
+
+@font-face {
+    font-family: "Righteous";
+    src: url("../webfonts/Righteous-Regular.woff") format("woff")
+     url("../webfonts/Righteous-Regular.woff2") format("woff2") 
+     url("../webfonts/Righteous-Regular.ttf") format("type true");
+}
+
+
+body,
+html {
+    font-family: "PTSans-Caption";
+    background-color: #F7ECDE;
+    h1{
+        font-family:"Pacifico" ;
+        font-weight: 500;
+    }
+
+}
+h1{
+    position: relative;
+    width: 18%;
+    
+    &::before{
+        content: "";
+        position: absolute;
+        background-color: #FEC260;
+        width: 100%;
+        height: 25%;
+        left: 0;
+        bottom: 10px;
+        z-index: -1;
+        transition: height .3s;
+    }
+    &:hover::before{
+        height: 50%;
+    }
+
+    
+}
+
+.bookmarkContent{
+   
+        border-width: 2px 0 2px 0;
+        border-style: dotted;
+        border-color: #352e28;
+   
+    h2{
+        font-family: "Righteous";
+        font-size: 25px;
+        background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
