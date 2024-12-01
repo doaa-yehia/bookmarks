@@ -1,3 +1,4 @@
+
 var bookmarkNameInput=document.getElementById("bookmarkName");
 var bookmarkUrlInput=document.getElementById("bookmarkUrl");
 var bookMarkList=[];
@@ -19,6 +20,10 @@ function submitBookMark(){
             localStorage.setItem("allBookMark", JSON.stringify(bookMarkList));
             clearForm();
             displayBookmark(bookMarkList);
+        }else{
+            Swal.fire("that Bookmark is Founded");
+            
+            clearForm();
         }
     }
 
@@ -85,8 +90,8 @@ function isExist(bookMark) {
     var found;
 
     for(var i=0;i<bookMarkList.length;i++){
-        if(bookMarkList[i].name==bookMark.name
-            || bookMarkList[i].url==bookMark.url
+        if(bookMarkList[i].name.toLowerCase()==bookMark.name.toLowerCase()
+            || bookMarkList[i].url.toLowerCase()==bookMark.url.toLowerCase()
         ){
             found=true;
             
@@ -102,5 +107,6 @@ function isExist(bookMark) {
     }
     return found;
 }
+
 
  
